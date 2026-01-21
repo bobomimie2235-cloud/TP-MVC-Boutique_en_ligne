@@ -30,7 +30,6 @@ class Order {
     public function getStatus() : ?string { return $this->status; }
 
     // SETTERS
-    public function setId(int $id): void { $this->id = $id; }
     public function setUserId(int $user_id): void { $this->user_id = $user_id; }
     public function setTotal(float $total_amount): void { $this->total_amount = $total_amount; }
     public function setCreatedAt(DateTime $created_at): void { $this->created_at = $created_at; }

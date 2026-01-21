@@ -22,8 +22,9 @@ class ProduitRepository
         foreach ($rows as $row) {
             $produits[] = new Product(
                 $row['id'],
-                $row['nom'],
-                $row['prix']
+                $row['name'],
+                $row['price'],
+                $row['stock']
             );
         }
 
@@ -42,21 +43,22 @@ class ProduitRepository
 
         return new Product(
             $row['id'],
-            $row['nom'],
-            $row['prix']
+            $row['name'],
+            $row['price'],
+            $row['stock']
         );
     }
 
     public function insert(Product $produit): void
     {
         $stmt = $this->pdo->prepare("
-            INSERT INTO products (nom, prix)
-            VALUES (:nom, :prix)
+            INSERT INTO products (name, price)
+            VALUES (:name, :price)
         ");
 
         $stmt->execute([
-            'nom'  => $produit->getName(),
-            'prix' => $produit->getPrice()
+            'name'  => $produit->getName(),
+            'price' => $produit->getPrice()
         ]);
     }
 

@@ -1,10 +1,15 @@
 <?php require 'layout/header.php'; ?>
 
-<h2>Produits disponibles</h2>
-<ul>
-<?php foreach($produits as $produit): ?>
-    <li><?= $produit->nom ?> - <?= $produit->prix ?> €</li>
-<?php endforeach; ?>
-</ul>
+<?php if (!empty($produits)): ?>
+    <?php foreach ($produits as $produit): ?>
+        <h3><?= htmlspecialchars($produit->getName()) ?></h3>
+        <p><?= htmlspecialchars($produit->getDescription()) ?></p>
+        <p><?= $produit->getPrice() ?> €</p>
+        <hr>
+    <?php endforeach; ?>
+<?php else: ?>
+    <p>Aucun produit disponible.</p>
+<?php endif; ?>
+
 
 <?php require 'layout/footer.php'; ?>

@@ -29,7 +29,6 @@ class Utilisateur {
     public function getRole(): ?string { return $this->role; }
 
     // SETTERS
-    public function setId(int $id): void { $this->id = $id; }
     public function setUsername(string $username): void { $this->username = $username; }
     public function setEmail(string $email): void { $this->email = $email; }
     public function setPassword(string $password): void { $this->password = $password; }

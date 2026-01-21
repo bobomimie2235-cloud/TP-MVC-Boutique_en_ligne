@@ -29,7 +29,6 @@ class OrderItems {
     public function getPrice(): ?float { return $this->price; }
 
     // SETTERS
-    public function setId(int $id): void { $this->id = $id; }
     public function setOrderId(int $order_id): void { $this->order_id = $order_id; }
     public function setProductId(int $product_id): void { $this->product_id = $product_id; }
     public function setQuantity(float $quantity): void { $this->quantity = $quantity; }
